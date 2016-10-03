@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        div.searchform {
+        
+        width:300px;
+        
+     
+}
+   </style>
+
+
+
+<div ng-controller="searchCtrl">
+
+              <div class=searchform>
+                  Search a Relation<br>
+                  <form >
+                  <label>Member Name</label>
+                   <input type="text" class= "form-control" ng-model="member_name" value="Null" />
+                   <label>Relative Name</label>
+                   <input type="text" class= "form-control" ng-model="relative_name" value="Null" />
+                   <input  type="button" class="btn btn-primary" ng-click="showrelation()" value="Search" />
+                </form>
+             </div> <br> <br>
+ 
+
+   
+                   <div ng-hide="!relatives">
+      
+                     <table ng-hide=" !member_name && !relative && !relationship ">
+                        <tr>
+                          <th>Member name</th>
+                          <th>Relative</th>
+                          <th>Relation</th>
+                          <th></th>
+                       </tr>
+
+                       <tr ng-repeat="relation in relatives" class="">
+                            <td>{{relation.member_name}}</td>
+                           <td>{{relation.relative}}</td>
+                           <td>{{relation.relationship}}</td>
+                            <td><a href="#/update/{{relation.id}}" class="btn btn-primary">Update</a>
+                            <input type="button" class="btn btn-primary" ng-click="notify(relation.id)" value="Delete"></td>
+                            </td>
+                       </tr>
+            
+                       </table>
+
+                      <form ng-show="relationship && member_name || relative "> <input type="button" class="btn btn-primary" ng-click="reset()" value="Search Again" /></form>
+        
+                 </div>
+        </div>
+
+

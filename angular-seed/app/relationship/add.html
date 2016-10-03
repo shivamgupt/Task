@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        div.searchform {
+        
+        width:300px;
+        
+     
+}
+   </style>
+
+
+
+<div ng-controller="addCtrl">
+
+              <div class=searchform>
+                  Add a Member<br>
+                  <form >
+                  <label>Member Name</label>
+                   <input type="text" class= "form-control" ng-model="member_name" value="Null" />
+                   <label>Relative Name</label>
+                   <input type="text" class= "form-control" ng-model="relative_name" value="Null" />
+                   <label>Relationship</label>
+                   <input type="text" class= "form-control" ng-model="relationship" value="Null" />
+                   <input  type="button" class="btn btn-primary" ng-click="addmember()" value="Add" />
+                </form>
+             </div> <br> <br>
+ 
+
+   
+                   <div ng-hide="!result ">
+      
+                     <table ng-hide=" !member_name && !relative_name && !relationship ">
+                        <tr>
+                          <th>Member Name</th>
+                          <th>Relative Name</th>
+                          <th>Relation</th>
+
+                       </tr>
+
+                       <tr ng-repeat="res in result" class="">
+                           <td>{{res.member_name}}</td>
+                           <td>{{res.relative}}</td>
+                           <td>{{res.relationship}}</td>
+                       </tr>
+            
+                       </table>
+
+                      <form ng-show="result "> <input type="button" class="btn btn-primary" ng-click="reset()" value="Add another" /></form>
+        
+                 </div>
+        </div>
+
+

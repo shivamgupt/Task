@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+        table, td, th {
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 500px;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        div.searchform {
+        
+        width:300px;
+        
+     
+}
+   </style>
+
+
+
+<div ng-controller="updateCtrl">
+
+              <div class=searchform>
+                  Update a Relationship<br>
+                  <form >
+                  <label>Member Name</label>
+                   <input type="text" class= "form-control" ng-model="member_name" value="Null" />
+                   <label>Relative Name</label>
+                   <input type="text" class= "form-control" ng-model="relative_name" value="Null" />
+                   <label>Relation</label>
+                   <input type="text" class= "form-control" ng-model="relationship" value="Null" />
+                   <input  type="button" class="btn btn-primary" ng-click="updaterelation()" value="Update" />
+                </form>
+             </div> <br> <br>
+ 
+
+   
+                   <div ng-hide="!results ">
+      
+                     <table ng-hide=" !member_name && !relative_name ">
+                        <tr>
+                          <th>Member name</th>
+                          <th>Relative</th>
+                          <th>Relation</th>
+                          
+                       </tr>
+
+                       <tr ng-repeat="res in results" class="">
+                            <td>{{res.member_name}}</td>
+                           <td>{{res.relative}}</td>
+                           <td>{{res.relationship}}</td>
+                            
+                       </tr>
+            
+                       </table>
+
+                      
+        
+                 </div>
+        </div>
+
+
