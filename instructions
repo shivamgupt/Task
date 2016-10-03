@@ -1,0 +1,8 @@
+1.laravel3 contains Laravel rest Api's
+2.Task contains Angular code
+3.Laravel code contains the migration for the databases so you can build the tables using migration command there
+4.I have completed the task by making two virtual hosts on same port 
+api.task.local for Laravel
+task.local for angular
+5.you will get update and delete button with results  after searching for a relationship 
+
